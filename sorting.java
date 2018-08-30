@@ -42,22 +42,10 @@ public class sorting{
 
     //Merge Sort
     public static void mSort(Integer[] input){
-        System.out.print("Splitting: ");
-        printArr(input);
-        ////
         if(input.length > 1){
             Integer midVal = (int)Math.floor((input.length-1)/2);
-
             Integer[] leftArr = Arrays.copyOfRange(input, 0, midVal+1); //use subarrays to save lines
-            System.out.println("LeftRAN: " + 0 + " - " + midVal );
-            System.out.print("  LeftARR: ");
-            printArr(leftArr);
-
             Integer[] rightArr = Arrays.copyOfRange(input, midVal+1, input.length);
-            System.out.println("RightRAN: " + (int)(midVal+1) + " - " + (int)(input.length-1));
-            System.out.print("  RightARR: ");
-            printArr(rightArr);
-
             mSort(leftArr);
             mSort(rightArr);
             int i = 0;
@@ -84,9 +72,6 @@ public class sorting{
                 k++;
             }
         }
-        ///
-        System.out.print("Merging: ");
-        printArr(input);
     }
 
     //Print Array
@@ -100,8 +85,16 @@ public class sorting{
     public static void main(String[] args){
         System.out.println("Hello World!");
         Integer[] test1 = {10,9,8,7,6,5,4,3,2,1,0,100,4312,43,3,6,2};
+        Integer[] test2 = {10,9,8,7,6,5,4,3,2,1,0,100,4312,43,3,6,2};
+        Integer[] test3 = {10,9,8,7,6,5,4,3,2,1,0,100,4312,43,3,6,2};
         mSort(test1);
-        System.out.println("Output: ");
+        System.out.println("Merge Sort Output: ");
         printArr(test1);
+        iSort(test2);
+        System.out.println("Insertion Sort Output: ");
+        printArr(test2);
+        bSort(test3);
+        System.out.println("Bible Sort Output: ");
+        printArr(test3);
     }
 }
