@@ -94,7 +94,7 @@ public class sorting{
         System.out.println("Insertion Sort Output: ");
         printArr(test2);
         bSort(test3);
-        System.out.println("Bible Sort Output: ");
+        System.out.println("Bubble Sort Output: ");
         printArr(test3);
     }
 }
